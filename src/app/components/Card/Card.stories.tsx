@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import styled from 'styled-components';
 
 const EXAMPLE = {
   title: 'Hitman’s Wife’s Bodyguard',
@@ -19,8 +20,17 @@ export const Regular = (): JSX.Element => (
   <Card content={EXAMPLE} display="regular" />
 );
 export const Compact = (): JSX.Element => (
-  <Card content={EXAMPLE} display="compact" />
+  <CompactContainer>
+    <Card content={EXAMPLE} display="compact" />
+    <Card content={EXAMPLE} display="compact" />
+  </CompactContainer>
 );
 export const CompactWide = (): JSX.Element => (
   <Card content={EXAMPLE} display="compactWide" />
 );
+
+const CompactContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+`;
