@@ -2,12 +2,12 @@ import React from 'react';
 import Card from './Card';
 
 const EXAMPLE = {
-  title: "Hitmans Wife's Bodyguard",
+  title: 'Hitman’s Wife’s Bodyguard',
   description:
-    "The world's most lethal odd couple - bodyguard Michael Bryce and hitman Darius Kincaid - are back on anoth......",
+    'The world’s most lethal odd couple - bodyguard Michael Bryce and hitman Darius Kincaid - are back on anoth......',
   rating: 3.5,
   genres: ['Action', 'Comedy', 'Crime'],
-  imageUrl: 'https://source.unsplash.com/200x300/?hitman',
+  imageUrl: 'https://source.unsplash.com/random/500x500?hitman',
 };
 
 export default {

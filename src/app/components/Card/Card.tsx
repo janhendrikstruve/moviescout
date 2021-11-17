@@ -22,8 +22,10 @@ export default function Card({ content, display }: CardProps): JSX.Element {
   return (
     <CardContainer display={display}>
       <ImageContainer>
-        <Image src={imageUrl}></Image>
-        <ButtonBookmark />
+        <Image src={imageUrl} />
+        <BookmarkButton>
+          <ButtonBookmark />
+        </BookmarkButton>
       </ImageContainer>
       <InfoContainer>
         <Typography type="h2">{title}</Typography>
@@ -39,17 +41,21 @@ const CardContainer = styled.article<Partial<CardProps>>`
   display: grid;
   grid-template-columns: ${(props) =>
     props.display === 'regular' ? '1fr 1fr' : '1fr'};
+  gap: 10px;
+  max-width: 467px;
 `;
 
 const Image = styled.img`
-  object-fit: cover;
-  height: 100%;
   width: 100%;
-  border-radius: 15px;
+  height: 100%;
+  object-fit: cover;
 `;
 
 const ImageContainer = styled.div`
-  display: relative;
+  position: relative;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
 `;
 
 const InfoContainer = styled.div``;
@@ -60,7 +66,7 @@ const Description = styled.p``;
 
 const Rating = styled.div`
   background-color: magenta;
-  height: 4px;
+  height: 30px;
 `;
 
 const BookmarkButton = styled.button`
@@ -70,6 +76,6 @@ const BookmarkButton = styled.button`
   width: 3rem;
   height: 3rem;
   background-color: transparent;
-  color: white;
+  color: inherit;
   border: none;
 `;
